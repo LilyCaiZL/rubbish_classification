@@ -25,21 +25,27 @@ MobileNetSSD 实时可回收垃圾目标识别模型。
 ## 三、项目最终效果
 - 图像分类测试图
 
-![Demo](images/classification_result.jpg)
+
+<div align="center"><img width="300" height="300" src="images/classification_result.jpg"/></div>
+
 - 目标识别测试图
 
-![Demo](images/object_result.jpg)
+<div align="center"><img width="300" height="300" src="images/object_result.jpg"/></div>
+
 ## 四、数据集介绍
 - 本设计使用的，数据来源于斯坦福大学的可回收垃圾集（https://github.com/garythung/trashnet） 和自行调查拍摄的可回收垃圾集共同组成的数据集
 
 1、图像分类
 
 | 编号 | 类别 | 数量 |  
-|--|--|--|
+|:----:|:----:|:---:|
 | 1 | metal | 414 |
 | 2 | glass | 508 |
 | 3 | paper | 602 |
 | 4 | plastic | 518 |
+
+<div align="center"><img width="550" height="300" src="images/sample1.png"/></div>
+
 
 2、目标识别
 
@@ -49,23 +55,41 @@ MobileNetSSD 实时可回收垃圾目标识别模型。
 | 2 | glass | 508 |
 | 3 | paper | 602 |
 | 4 | plastic | 518 |
-## 五、超参数设置
+
+<div align="center"><img width="550" height="300" src="images/sample2.png"/></div>
+
+##  五、超参数设置
 - 图像分类：
+
 迁移学习:
+
 inputsize = 3,224,224
+
 LearningRate = 0.0001
+
 BatchSize = 16
 
-Train:
+
+训练:
+
 inputsize = 3,224,224
+
 LearningRate = 0.001
+
 BatchSize = 32
 
+
 - 目标识别：
+
 inputsize = 3,300,300
+
 LearningRate = 0.001
+
 BatchSize = 32
+
+
 ## 六、训练及测试项目运行方式
+
 ### 1、模型训练与测试
 - 配置要求
 
@@ -78,26 +102,27 @@ BatchSize = 32
 | 3 | CPU | 8 |
 | 4 | RAM | 32G |
 | 5 | python | 3.5 |
-a.ResNet50图像分类
-- 训练
+
+a. ResNet50图像分类
+ 训练
 
 进入Classification(ResNet50)目录
 ```
 python3 train.py
 ```
-- 测试
+ 测试
 
 ```
 python3 test_realtime.py
 ```
-b.MobileNetSSD目标识别
+b. MobileNetSSD目标识别
 进入Object Detection(SSD)目录
-- 训练
+ 训练
 
 ```
 python3 train.py
 ```
-- 测试
+ 测试
 
 ```
 python3 _ce.py
@@ -108,14 +133,19 @@ python3 _ce.py
 | 编号 | 项目 | 配置 |  
 |--|--|--|
 | 1 | 树莓派 | 3B+ |
-| 2 | 树莓派摄像头 |  官方摄像头|
+| 2 | 树莓派摄像头 |  usb摄像头|
 | 3 | 操作系统 | 官方操作系统 |
 | 4 | 舵机 | SP90 |
 | 5 | cmake | 3.10 |
+
 - 运行
+
 关机状态将摄像头连上树莓派
+
 将舵机通过杜邦线连树莓派引脚
+
 将PaddleLite-armlinux-demo目录拷贝进树莓派
+
 进入object_detection_demo目录
 
 
@@ -129,5 +159,30 @@ python3 _ce.py
 ### 1、模型训练与测试
 
 ### 2、边缘端部署与使用
+图像分类
 
+脚本目录：
+```
+image_classification_demo文件夹：图像分类模型部署
+- images文件夹：中放置需要被读取并测试的图片
+- labels文件夹：模型输出的标签
+- models文件夹：存储用paddlepaddle训练输出后压缩的naive buffer图像分类模型
+image_classification_demo.cc：执行压缩模型c++程序
+run.sh：Linux脚本调用c++程序并指定运行场景（armv7hf为树莓派）
+Paddle-Lite文件夹：c++程序所需要的动态库
+```
+目标识别
+
+脚本目录：
+```
+进入object_detection_demo文件夹：图像分类模型部署
+- images文件夹：中放置需要被读取并测试的图片
+- labels文件夹：模型输出的标签
+- models文件夹：存储用paddlepaddle训练输出后压缩的naive buffer目标识别模型模型
+object_detection_demo.cc：执行压缩模型c++程序
+run.sh：Linux脚本调用c++程序并指定运行场景（armv7hf为树莓派）
+r.sh：获取摄像头抓拍图片，并执行run.sh脚本，获取类别标签，调用ppp.py文件控制舵机
+ppp.py控制舵机
+Paddle-Lite文件夹：c++程序所需要的动态库
+```
 ### 3、云端部署与使用
