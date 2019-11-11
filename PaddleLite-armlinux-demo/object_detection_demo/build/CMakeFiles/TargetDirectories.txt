@@ -1,0 +1,3 @@
+/home/pi/cmake-3.10.3/Paddle/PaddleLite-armlinux-demo/object_detection_demo/build/CMakeFiles/rebuild_cache.dir
+/home/pi/cmake-3.10.3/Paddle/PaddleLite-armlinux-demo/object_detection_demo/build/CMakeFiles/object_detection_demo.dir
+/home/pi/cmake-3.10.3/Paddle/PaddleLite-armlinux-demo/object_detection_demo/build/CMakeFiles/edit_cache.dir
