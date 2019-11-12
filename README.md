@@ -23,6 +23,7 @@ MobileNetSSD 实时可回收垃圾目标识别模型。
 垃圾的目标识别。
 
 ## 三、项目最终效果
+**训练模型测试结果**
 - 图像分类测试图
 
 
@@ -31,6 +32,15 @@ MobileNetSSD 实时可回收垃圾目标识别模型。
 - 目标识别测试图
 
 <div align="center"><img width="300" height="300" src="images/object_result.jpg"/></div>
+
+
+**压缩模型测试结果**
+- 目标识别测试图
+<div align="center"><img width="300" height="300" src="images/result.jpg"/></div>
+
+- 目标识别控制舵机
+
+<div align="center"><img width="300" height="200" src="images/rasp.jpg"/></div>
 
 ## 四、数据集介绍
 - 本设计使用的，数据来源于斯坦福大学的可回收垃圾集（https://github.com/garythung/trashnet） 和自行调查拍摄的可回收垃圾集共同组成的数据集
