@@ -46,6 +46,7 @@ MobileNetSSD 实时可回收垃圾目标识别模型。
 - 本设计使用的，数据来源于斯坦福大学的可回收垃圾集（https://github.com/garythung/trashnet） 和自行调查拍摄的可回收垃圾集共同组成的数据集
 
 1、图像分类
+<div align="center">
 
 | 编号 | 类别 | 数量 |  
 |:----:|:----:|:---:|
@@ -54,10 +55,13 @@ MobileNetSSD 实时可回收垃圾目标识别模型。
 | 3 | paper | 602 |
 | 4 | plastic | 518 |
 
+</div>
 <div align="center"><img width="550" height="300" src="images/sample1.png"/></div>
 
 
 2、目标识别
+
+<div align="center">
 
 | 编号 | 类别 | 数量 |  
 |--|--|--|
@@ -65,6 +69,8 @@ MobileNetSSD 实时可回收垃圾目标识别模型。
 | 2 | glass | 508 |
 | 3 | paper | 602 |
 | 4 | plastic | 518 |
+
+</div>
 
 <div align="center"><img width="550" height="300" src="images/sample2.png"/></div>
 
