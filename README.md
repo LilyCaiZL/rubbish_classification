@@ -220,10 +220,18 @@ r.sh：获取摄像头抓拍图片，并执行run.sh脚本，获取类别标签�
 ppp.py控制舵机
 Paddle-Lite文件夹：c++程序所需要的动态库
 ```
+
+最终成果：
+<div align="center"><img width="300" height="200" src="images/rasp.jpg"/></div>
+
 ### 3、云端部署与使用
 1.	伪云端实现：
 
 使用花生壳5，对本地IP实现内网穿透（IP地址及端口的映射），实现公网与内网的数据通信交互，与之后介绍的基于Flask的部署方式有关。
+
+<div align="center"><img width="300" height="200" src="images/huashengke.png"/></div>
+
+
 2.	服务器端模型部署：
 
 根据这篇“手把手教你部署深度学习模型” https://www.jianshu.com/p/43da2553a2fb提供的思路，实现Paddle模型的部署。
