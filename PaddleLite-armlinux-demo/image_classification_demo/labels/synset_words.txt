@@ -1,4 +1,0 @@
-1 plastic
-2 paper
-3 glass
-4 metal
